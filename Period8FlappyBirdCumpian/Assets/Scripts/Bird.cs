@@ -11,6 +11,7 @@ public class Bird : MonoBehaviour
     Rigidbody2D rb2d;
     Animator anim;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,7 @@ public class Bird : MonoBehaviour
 
     void OnCollisionEnter2D()
     {
+        rb2d.velocity = Vector2.zero; 
         isDead = true;
         anim.SetTrigger("Die");
         GameControl.Instance.BirdDied();
